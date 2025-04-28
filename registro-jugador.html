@@ -294,22 +294,6 @@
               </div>
             </div>
           </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
-            <button
-              type="button"
-              class="btn btn-primary"
-              onclick="imprimirCarnets()"
-            >
-              <i class="fas fa-print me-2"></i>Imprimir Carnets
-            </button>
-          </div>
         </div>
       </div>
     </div>
@@ -546,8 +530,8 @@
               <div class="d-flex justify-content-between align-items-center">
                 <h6 class="mb-0">${player.nombres} ${player.apellidos}</h6>
                 <div>
-                  <button class="btn btn-sm btn-success" onclick="viewPlayerDetails('${doc.id}')">Ver</button>
-                  <button class="btn btn-sm btn-danger ms-2" onclick="deletePlayer('${doc.id}')">Eliminar</button>
+                  <button class="btn btn-sm btn-success" title="Ver detalles del jugador" onclick="viewPlayerDetails('${doc.id}')"><i class="fa-solid fa-eye"></i></button>
+                  <button class="btn btn-sm btn-danger ms-2"  title="Eliminar  jugador" onclick="deletePlayer('${doc.id}')"><i class="fa-solid fa-trash"></i></button>
                 </div>
               </div>
             `;
@@ -1065,6 +1049,65 @@
     </script>
 
     <style>
+      @media (max-width: 768px) {
+        .carnet-moderno {
+          width: 90%;
+          height: auto;
+          padding: 16px;
+          font-size: 0.8rem;
+        }
+
+        .carnet-moderno .carnet-content {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .carnet-moderno .carnet-photo-section {
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+
+        .carnet-moderno .carnet-info {
+          align-items: center;
+          text-align: center;
+          font-size: 0.8rem;
+        }
+
+        .carnet-moderno .carnet-numero-jugador {
+          font-size: 1rem;
+        }
+
+        .carnet-moderno .team-name {
+          font-size: 0.85rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .carnet-moderno {
+          width: 100%;
+          padding: 14px;
+          font-size: 0.75rem;
+        }
+
+        .carnet-moderno .carnet-photo-container {
+          width: 60px;
+          height: 80px;
+        }
+
+        .carnet-moderno .carnet-info {
+          font-size: 0.7rem;
+        }
+
+        .carnet-moderno .carnet-numero-jugador {
+          font-size: 0.9rem;
+        }
+
+        .carnet-moderno .team-name {
+          font-size: 0.8rem;
+        }
+      }
+
       /* Estilos para el modal de ver jugador */
       .carnet-container {
         /* background:  */

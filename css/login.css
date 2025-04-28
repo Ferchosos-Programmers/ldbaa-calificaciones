@@ -9,8 +9,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Mejor usar min-height para pantallas pequeñas */
     font-family: "Times New Roman", Times, serif;
+    position: relative; /* Necesario para que .overlay funcione correctamente */
 }
 
 .overlay {
@@ -26,21 +27,47 @@ body {
 .login-box {
     position: relative;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 40px 30px;
     border-radius: 15px;
     border: 2px solid #28a745;
-    width: 100%;
+    width: 90%;
     max-width: 400px;
     color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
+/* Botón */
 .btn-green {
     background-color: #28a745;
     color: white;
     font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .btn-green:hover {
     background-color: #218838;
+}
+
+/* MEDIA QUERIES para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .login-box {
+        padding: 30px 20px;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px;
+    }
+    .login-box {
+        padding: 25px 15px;
+    }
 }

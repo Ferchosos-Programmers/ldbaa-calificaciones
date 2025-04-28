@@ -1,49 +1,87 @@
 body {
-    background-image: url('https://img.freepik.com/fotos-premium/balon-futbol-renderizado-3d-estadio-futbol-fondo-confeti_493806-5425.jpg'); /* Cambia esta ruta si usas otra imagen */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-  }
-  
-  .welcome-container {
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.85); /* Oscurece más el fondo para mejor contraste */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
+  background-image: url('https://img.freepik.com/fotos-premium/balon-futbol-renderizado-3d-estadio-futbol-fondo-confeti_493806-5425.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  min-height: 100vh; /* Para mejor adaptación en móviles */
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-container {
+  flex: 1; /* Toma todo el alto disponible */
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px; /* Espacio interno para móviles */
+  box-sizing: border-box;
+}
+
+.content-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border: 2px solid #28a745;
+  border-radius: 10px;
+  max-width: 700px;
+  width: 100%; /* Que siempre ocupe el ancho disponible */
+  box-sizing: border-box;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  transition: all 0.3s ease-in-out;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  width: 100%; /* Que el botón ocupe todo el ancho en móviles */
+  max-width: 250px; /* En escritorio no es tan ancho */
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+  transform: scale(1.05);
+}
+
+.btn-outline-success {
+  color: white;
+  border-color: #28a745;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 250px;
+}
+
+.btn-outline-success:hover {
+  background-color: #28a745;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+@media (max-width: 768px) {
   .content-box {
-    background-color: rgba(0, 0, 0, 0.7);
-    max-width: 700px;
-    border: 2px solid #28a745;
+      padding: 30px 20px;
+      max-width: 90%;
   }
-  
-  .btn-success {
-    background-color: #28a745;
-    border-color: #28a745;
-    transition: all 0.3s ease-in-out;
+
+  .btn-success, .btn-outline-success {
+      max-width: 100%;
   }
-  
-  .btn-success:hover {
-    background-color: #218838;
-    border-color: #1e7e34;
-    transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+  .content-box {
+      padding: 25px 15px;
   }
-  
-  .btn-outline-success {
-    color: white;
-    border-color: #28a745;
-  }
-  
-  .btn-outline-success:hover {
-    background-color: #28a745;
-    color: white;
-    transform: scale(1.05);
-  }
-  
+}

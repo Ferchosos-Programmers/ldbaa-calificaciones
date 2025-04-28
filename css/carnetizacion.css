@@ -1,0 +1,85 @@
+body {
+    background-color: #f1f1f1;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    background-color: #000;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #fff !important;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    transform: scale(1.05);
+  }
+  
+  .card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 1rem;
+    background: #fff;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    color: #28a745;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  /* RESPONSIVE MEDIA QUERIES */
+  @media (max-width: 992px) {
+    .navbar-brand {
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-brand {
+      font-size: 1rem;
+    }
+    
+    .card {
+      margin: 10px 0;
+    }
+  
+    .btn-success {
+      width: 100%;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar-brand {
+      font-size: 1.1rem;
+    }
+  
+    .card {
+      padding: 10px;
+    }
+    
+    .btn-success {
+      width: 100%;
+      font-size: 0.95rem;
+    }
+  }
+  

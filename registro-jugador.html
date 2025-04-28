@@ -529,10 +529,14 @@
                   playerItem.innerHTML = `
               <div class="d-flex justify-content-between align-items-center">
                 <h6 class="mb-0">${player.nombres} ${player.apellidos}</h6>
-                <div>
-                  <button class="btn btn-sm btn-success" title="Ver detalles del jugador" onclick="viewPlayerDetails('${doc.id}')"><i class="fa-solid fa-eye"></i></button>
-                  <button class="btn btn-sm btn-danger ms-2"  title="Eliminar  jugador" onclick="deletePlayer('${doc.id}')"><i class="fa-solid fa-trash"></i></button>
-                </div>
+               <div class="d-flex align-items-center">
+  <button class="btn btn-sm btn-success" title="Ver detalles del jugador" onclick="viewPlayerDetails('${doc.id}')">
+    <i class="fa-solid fa-eye"></i>
+  </button>
+  <button class="btn btn-sm btn-danger ms-2" title="Eliminar jugador" onclick="deletePlayer('${doc.id}')">
+    <i class="fa-solid fa-trash"></i>
+  </button>
+</div>
               </div>
             `;
                   playersList.appendChild(playerItem);
@@ -1049,159 +1053,7 @@
     </script>
 
     <style>
-      @media (max-width: 768px) {
-        .carnet-moderno {
-          width: 90%;
-          height: auto;
-          padding: 16px;
-          font-size: 0.8rem;
-        }
-
-        .carnet-moderno .carnet-content {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-        }
-
-        .carnet-moderno .carnet-photo-section {
-          margin-right: 0;
-          margin-bottom: 10px;
-        }
-
-        .carnet-moderno .carnet-info {
-          align-items: center;
-          text-align: center;
-          font-size: 0.8rem;
-        }
-
-        .carnet-moderno .carnet-numero-jugador {
-          font-size: 1rem;
-        }
-
-        .carnet-moderno .team-name {
-          font-size: 0.85rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .carnet-moderno {
-          width: 100%;
-          padding: 14px;
-          font-size: 0.75rem;
-        }
-
-        .carnet-moderno .carnet-photo-container {
-          width: 60px;
-          height: 80px;
-        }
-
-        .carnet-moderno .carnet-info {
-          font-size: 0.7rem;
-        }
-
-        .carnet-moderno .carnet-numero-jugador {
-          font-size: 0.9rem;
-        }
-
-        .carnet-moderno .team-name {
-          font-size: 0.8rem;
-        }
-      }
-
-      /* Estilos para el modal de ver jugador */
-      .carnet-container {
-        /* background:  */
-        border-radius: 15px;
-        padding: 20px;
-        color: white;
-        position: relative;
-        overflow: hidden;
-        margin-bottom: 20px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .carnet-container::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-          45deg,
-          transparent 0%,
-          rgba(255, 255, 255, 0.1) 100%
-        );
-        pointer-events: none;
-      }
-
-      .carnet-header {
-        text-align: center;
-        margin-bottom: 20px;
-        position: relative;
-      }
-
-      .carnet-header h3 {
-        font-size: 1.5rem;
-        margin: 0;
-        background: linear-gradient(45deg, #28a745, #20c997);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: bold;
-      }
-
-      .carnet-photo-container {
-        width: 150px;
-        height: 200px;
-        margin: 0 auto 20px;
-        border-radius: 10px;
-        overflow: hidden;
-        border: 3px solid #28a745;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      }
-
-      .carnet-photo-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .carnet-info {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 1px;
-        border-radius: 10px;
-        margin-bottom: -1%;
-      }
-
-      .carnet-info p {
-        margin: 5px 0;
-        font-size: 0.9rem;
-      }
-
-      .carnet-info strong {
-        color: #28a745;
-      }
-
-      .carnet-footer,
-      .cedula-footer {
-        text-align: center;
-        font-size: 0.8rem;
-        color: rgba(000);
-        border-top: 1px solid #28a745;
-        padding-top: 1px;
-        margin-top: auto;
-        font-style: italic;
-        letter-spacing: 0.2px;
-        width: 100%;
-        background: transparent;
-      }
-      .carnet-footer p,
-      .cedula-footer p {
-        margin: 0;
-      }
-
-      /* Estilos para la generación de carnets */
+      /* Estilos base */
       .carnet-moderno {
         background: var(
             --carnet-background,
@@ -1212,31 +1064,26 @@
         border-radius: 16px;
         padding: 18px 22px 12px 22px;
         color: #222;
-        position: relative;
-        overflow: hidden;
-        margin-bottom: 24px;
-        box-shadow: 0 4px 18px rgba(40, 167, 69, 0.1);
         width: 8.5cm;
         height: 5.4cm;
-        margin: 0 auto 24px;
-        font-size: 0.9rem;
         display: flex;
         flex-direction: column;
+        margin: 0 auto 24px;
+        font-size: 0.9rem;
+        box-shadow: 0 4px 18px rgba(40, 167, 69, 0.1);
         border: 1.5px solid #e0e0e0;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
+        position: relative;
+        overflow: hidden;
       }
 
-      .carnet-moderno .carnet-header {
+      .carnet-header {
         text-align: center;
         margin-bottom: 8px;
-        position: relative;
-        width: 100%;
         border-bottom: 1.5px solid #080404;
         padding-bottom: 4px;
       }
 
-      .carnet-moderno .carnet-header h3 {
+      .carnet-header h3 {
         font-size: 1.1rem;
         margin: 0;
         color: #0c0303;
@@ -1245,148 +1092,157 @@
         letter-spacing: 1.2px;
       }
 
-      .carnet-moderno .carnet-header p {
+      .carnet-header p {
         font-size: 0.8rem;
         color: #000;
         margin: 2px 0 0 0;
         font-weight: 500;
       }
 
-      .carnet-moderno .carnet-content {
+      .carnet-content {
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: flex-start;
         flex: 1;
-        margin: 0;
-        padding: 0;
-        background: none;
-        border: none;
-        border-radius: 0;
-        box-shadow: none;
-        overflow: visible;
-        min-width: 0;
+        align-items: center;
       }
 
-      .carnet-moderno .carnet-photo-section {
+      .carnet-photo-section {
         width: 70px;
-        min-width: 70px;
-        max-width: 70px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
         margin-right: 18px;
-        margin-top: 0;
       }
 
-      .carnet-moderno .carnet-photo-container {
+      .carnet-photo-container {
         width: 70px;
         height: 90px;
         border-radius: 10px;
         overflow: hidden;
         border: 2.5px solid #28a745;
-        box-shadow: 0 2px 10px rgba(40, 167, 69, 0.1);
         background: #fff;
+        box-shadow: 0 2px 10px rgba(40, 167, 69, 0.1);
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
       }
 
-      .carnet-moderno .carnet-photo-container img {
+      .carnet-photo-container img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
 
-      .carnet-moderno .carnet-numero-jugador {
-        text-align: center;
+      .carnet-numero-jugador {
         font-size: 1.1rem;
         font-weight: bold;
         color: #000;
-        margin-top: -20px;
-        letter-spacing: 1.2px;
-        text-shadow: 0 1px 2px #e0e0e0;
+        margin-top: -15px;
+        text-align: center;
       }
 
-      .carnet-moderno .carnet-info {
+      .carnet-info {
+        flex: 1;
+        font-size: 0.75rem;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex: 1;
-        min-width: 0;
-        padding: 0;
-        background: transparent;
-        box-shadow: none;
-        border-radius: 0;
-        min-height: 0;
-        font-size: 0.72rem;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        line-height: 1.6; /* <<< aumenté el espacio entre líneas */
-        margin-bottom: 0;
-        margin-top: -1%;
+        justify-content: center;
       }
 
-      .carnet-moderno .carnet-info p {
-        margin: 0 0 0px 0;
-        font-size: 0.72rem;
-        line-height: 1.6;
+      .carnet-info p {
+        margin: 0;
+        line-height: 1.4;
         color: #000;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        max-width: 100%;
       }
 
-      .carnet-moderno .carnet-info strong {
+      .carnet-info strong {
         color: #000;
         font-weight: 600;
-        letter-spacing: 0.2px;
       }
 
-      .carnet-moderno .carnet-footer {
+      .team-name {
+        font-size: 0.9rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 5px;
+        color: #000;
+      }
+
+      .carnet-footer {
         text-align: center;
         font-size: 0.7rem;
         color: #888;
+        margin-top: 8px;
         border-top: 1px solid #e0e0e0;
         padding-top: 4px;
-        margin-top: auto;
         font-style: italic;
-        letter-spacing: 0.2px;
-        width: 100%;
       }
 
-      .carnet-moderno .carnet-footer p {
-        margin: 0;
+      /* RESPONSIVE MEDIA QUERIES */
+      @media (max-width: 992px) {
+        .navbar-brand {
+          font-size: 1.3rem;
+        }
       }
 
+      @media (max-width: 768px) {
+        .navbar-brand {
+          font-size: 1rem;
+        }
+
+        .card {
+          margin: 10px 0;
+        }
+
+        .btn-success {
+          width: 50%;
+          font-size: 1rem;
+        }
+        .btn-danger {
+          width: 50%;
+          font-size: 1rem;
+        }
+        .btn-primary {
+          width: 50%;
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .navbar-brand {
+          font-size: 1.1rem;
+        }
+
+        .card {
+          padding: 10px;
+        }
+
+        .btn-success {
+          width: 50%;
+          font-size: 0.8rem;
+        }
+        .btn-danger {
+          width: 50%;
+          font-size: 0.8rem;
+        }
+        .btn-primary {
+          width: 80%;
+          font-size: 0.8rem;
+        }
+      }
+      /* Imprimir */
       @media print {
         .carnet-moderno {
           break-inside: avoid;
           page-break-inside: avoid;
           -webkit-print-color-adjust: exact !important;
           print-color-adjust: exact !important;
-          background-color: #ffffff !important;
+          background: #ffffff !important;
           background-image: var(--carnet-background) !important;
           background-size: cover !important;
           background-position: center !important;
           background-repeat: no-repeat !important;
         }
-      }
-
-      /* Estilos para el nombre del equipo en el carnet */
-      .carnet-moderno .team-name {
-        text-align: center;
-        font-size: 0.9rem;
-        font-weight: bold;
-        color: #000;
-        margin-top: 4px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
       }
     </style>
   </body>

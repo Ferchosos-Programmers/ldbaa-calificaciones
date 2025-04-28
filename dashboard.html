@@ -75,7 +75,51 @@
       .btn-primary:hover {
         background-color: #28a745;
       }
+          /* RESPONSIVE MEDIA QUERIES */
+          @media (max-width: 992px) {
+        .navbar-brand {
+          font-size: 1.3rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navbar-brand {
+          font-size: 1rem;
+        }
+
+        .card {
+          margin: 10px 0;
+        }
+        .btn-danger {
+          width: 50%;
+          font-size: 1rem;
+        }
+        .btn-warning {
+          width: 50%;
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .navbar-brand {
+          font-size: 1.1rem;
+        }
+
+        .card {
+          padding: 10px;
+        }
+
+        .btn-warning {
+          width: 50%;
+          font-size: 0.8rem;
+        }
+        .btn-danger {
+          width: 50%;
+          font-size: 0.8rem;
+        }
+      }
     </style>
+    
   </head>
   <body>
     <!-- Header -->
@@ -354,14 +398,15 @@
           <div class="card-body text-center">
             <h5 class="card-title">${team.name}</h5>
             <p class="card-text"><strong>Categoría:</strong> ${team.category}</p>
-            <div class="btn-group">
-              <button class="btn btn-warning btn-sm me-2" onclick="resetAdminKey('${team.id}')">
-                <i class="fas fa-key"></i> Resetear Clave
-              </button>
-              <button class="btn btn-danger btn-sm" onclick="deleteTeam('${team.id}')">
-                <i class="fas fa-trash"></i> Eliminar
-              </button>
-            </div>
+          <div class="d-flex align-items-center">
+  <button class="btn btn-warning btn-sm me-2" onclick="resetAdminKey('${team.id}')">
+    <i class="fas fa-key"></i> Resetear Clave
+  </button>
+  <button class="btn btn-danger btn-sm" onclick="deleteTeam('${team.id}')">
+    <i class="fas fa-trash"></i> Eliminar
+  </button>
+</div>
+
           </div>
         </div>
       `;
